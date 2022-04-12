@@ -58,6 +58,53 @@
         <!-- <section id="auth-status-sign-out"></section> -->
       </div>
 
+      <div class="hidden" id="create-anime">
+        <h2>Add 💖Anime</h2>
+          <form id="anime-create">
+            <input type="text" name="anime[title]" placeholder="Anime Title Here" required>
+            <input type="text" name="anime[platform]" placeholder="What platform do you watch this anime?" required>
+            <input type="text" name="anime[description]" placeholder="Enter a brief description" required>
+            <input type="text" name="anime[comment]" placeholder="Thoughts? What episode are you up to?">
+            <button type="submit">Create Anime</button>
+          </form>
+          <div id="anime-create-message"></div>
+      </div>
+
+      <div class="hidden" id="idx-anime">
+        <h2>Show All Your Favorite Anime</h2>
+        <button id="anime-idx">Get All Anime</button>
+      </div>
+
+      <div class="hidden" id="show-anime">
+        <h2>Show One Anime</h2>
+        <form id="anime-show">
+          <input type='text' name="anime[id]" placeholder="Anime ID Here" required>
+          <button type="submit">Get Anime</button>
+        </form>
+      </div>
+
+      <div>
+        <h2>Update 💖Anime</h2>
+        <form id="anime-update">
+          <input type="text" name="anime[id]" id="anime-id-update" placeholder="Anime Title Here" required>
+          <input type="text" name="anime[title]" placeholder="Anime Title Here" required>
+          <input type="text" name="anime[platform]" placeholder="What platform do you watch this anime?" required>
+          <input type="text" name="anime[description]" placeholder="Enter a brief description" required>
+          <input type="text" name="anime[comment]" placeholder="Thoughts? What episode are you up to?">
+          <button type="submit">Update Anime</button>
+        </form>
+        <div id="anime-update-message"></div>
+      </div>
+
+      <div class="hidden" id="delete-anime">
+        <h2>Delete An Anime</h2>
+        <form id="anime-delete">
+          <input type="text" name="anime[id]" placeholder="Anime ID Here" required>
+          <button type="submit">Delete Anime</button>
+        </form>
+        <div id="anime-delete-message"></div>
+      </div>
+
       <section id="auth-status"></section>
       
     </body>
