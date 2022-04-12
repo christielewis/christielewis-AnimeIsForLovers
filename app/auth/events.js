@@ -67,7 +67,7 @@ const onChangePW = function(e) {
     const data = getFormFields(form)
 
     authApi
-        .signIn(data)
+        .changePW(data)
         .then((response) => authUi.onChangePWSuccess(response))
         .catch(() => authUi.onChangePWFailure())
 }

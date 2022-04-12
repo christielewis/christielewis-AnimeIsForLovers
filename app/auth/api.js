@@ -23,7 +23,7 @@ const changePW = function(data) {
     console.log(store)
     return $.ajax({
         method: 'PATCH',
-        url: config.apiUrl + '/change-pw',
+        url: config.apiUrl + '/change-password',
         headers: {
             Authorization: 'Bearer ' + store.user.token
         },
