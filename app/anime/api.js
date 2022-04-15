@@ -2,7 +2,7 @@
 
 // const config = require('./../config')
 
-const createAnime = function(data) {
+const createAnime = (data) => {
     console.log(data)
     return $.ajax({
         method: 'POST',
@@ -11,21 +11,21 @@ const createAnime = function(data) {
     })
 }
 
-const indexAnime = function() {
+const indexAnime = () => {
     return $.ajax({
         method: 'GET',
         url: 'config.apiUrl' + '/anime'
     })
 }
 
-const showAnime = function(id) {
+const showAnime = (id) => {
     return $.ajax({
         method: 'GET',
         url: 'config.apiUrl' + '/anime/' + id
     })
 }
 
-const updateAnime = function(data, id) {
+const updateAnime = (data, id) => {
     return $.ajax({
         method: 'PATCH',
         url: 'config.apiUrl' + '/anime/' + id,
@@ -33,7 +33,7 @@ const updateAnime = function(data, id) {
     })
 }
 
-const deleteAnime = function(id) {
+const deleteAnime = (id) => {
     return $.ajax({
         method: 'DELETE',
         url: 'config.apiUrl' + '/anime/' + id
