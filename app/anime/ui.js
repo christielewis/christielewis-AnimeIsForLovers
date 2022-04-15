@@ -67,6 +67,10 @@ const onShowSuccess = (data) => {
 
 const onUpdateSuccess = () => {
 
+    $('#anime-update-msg').html('Anime updated successfully!')
+    $('#anime-update-msg').addClass('success')
+
+
     setTimeout(() => {
         $('#err-msg').html('')
         $('#err-msg').removeClass('success')
@@ -77,6 +81,8 @@ const onUpdateSuccess = () => {
 }
 
 const onDeleteSuccess = () => {
+    $('#anime-delete-msg').html('Anime deleted successfully!')
+    $('#anime-delete-msg').addClass('success')
 
 
     setTimeout(() => {

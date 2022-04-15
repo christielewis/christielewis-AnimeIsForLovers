@@ -27,12 +27,25 @@ const onShowAnime = (e) => {
         .then(animeUi.onShowSuccess)
         .catch(animeUi.onError)
 }
-const onUpdateAnime = () => {
+const onUpdateAnime = (e) => {
+    e.preventDefault()
 
+    const data = getFormFields(e.target)
+    const id = data.anime.id
+
+    animeApi.updateAnime(id, data)
+        .then(animeUi.onUpdateSuccess)
+        .catch(animeUi.onError)
 }
 
-const onDeleteAnime = () => {
+const onDeleteAnime = (e) => {
+    e.preventDefault()
 
+    const data = getFormFields(e.target)
+
+    animeApi.deleteAnime(data.anime.id)
+        .then(animeUi.onDeleteSuccess)
+        .catch(animeUi.onError)
 }
 
 module.exports = {
