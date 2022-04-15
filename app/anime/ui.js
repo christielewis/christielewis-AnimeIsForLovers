@@ -57,9 +57,10 @@ const onShowSuccess = (data) => {
     console.log(data)
     const animeHtml = `
         <h3>Title: ${data.anime.title}</h3>
+        <h5>ID: ${data.anime._id}</h5>
         <p>Description: ${data.anime.description}</>
     `
-    $('#books-display').html(animeHtml)
+    $('#anime-display').html(animeHtml)
 
     // reset all forms
     $('form').trigger('reset')

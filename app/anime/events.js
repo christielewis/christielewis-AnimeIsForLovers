@@ -32,8 +32,10 @@ const onUpdateAnime = (e) => {
 
     const data = getFormFields(e.target)
     const id = data.anime.id
+    const title = data.anime.title
+    const description = data.anime.description
 
-    animeApi.updateAnime(id, data)
+    animeApi.updateAnime(id, title, description)
         .then(animeUi.onUpdateSuccess)
         .catch(animeUi.onError)
 }

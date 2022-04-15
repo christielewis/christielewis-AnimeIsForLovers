@@ -21,6 +21,7 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#change-pw-form').on('submit', authEvents.onChangePW)
 
+  // ///////// ANIME EVENT LISTENERS /////////////
 
   $('#anime-create').on('submit', animeEvents.onCreateAnime)
   $('#anime-idx').on('click', animeEvents.onIndexAnime)
@@ -28,6 +29,7 @@ $(() => {
   $('#anime-update').on('submit', animeEvents.onUpdateAnime)
   $('#anime-delete').on('submit', animeEvents.onDeleteAnime)
 
-  
+  $('#anime-display').on('click', '.dynamic-anime-update', animeEvents.onDynamicUpdateAnime)
+  $('#anime-display').on('submit', '.dynamic-anime-delete', animeEvents.onDynamicDeleteAnime)
 
 })

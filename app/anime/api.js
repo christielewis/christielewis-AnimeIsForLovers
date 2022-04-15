@@ -1,42 +1,65 @@
-// const { config } = require("grunt")
 
-const config = require('./../config')
+const config = require('../config')
+const store = require('../store')
 
 const createAnime = (data) => {
     console.log(data)
+    console.log(store)
+
     return $.ajax({
         method: 'POST',
         url: config.apiUrl + '/anime',
-        data: data
+        data: data,
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
     })
 }
 
 const indexAnime = () => {
     return $.ajax({
         method: 'GET',
-        url: config.apiUrl + '/anime'
+        url: config.apiUrl + '/anime',
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
     })
 }
 
 const showAnime = (id) => {
     return $.ajax({
         method: 'GET',
-        url: config.apiUrl + '/anime/' + id
+        url: config.apiUrl + '/anime/' + id,
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
     })
 }
 
-const updateAnime = (data, id) => {
+const updateAnime = (id, title, description) => {
+    console.log(store)
     return $.ajax({
         method: 'PATCH',
         url: config.apiUrl + '/anime/' + id,
-        data: data
+        data: {
+            "anime": {
+                "title": title,
+                "description": description
+            }
+        },
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
     })
 }
 
 const deleteAnime = (id) => {
     return $.ajax({
         method: 'DELETE',
-        url: config.apiUrl + '/anime/' + id
+        url: config.apiUrl + '/anime/' + id,
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
     })
 }
 
