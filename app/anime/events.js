@@ -18,8 +18,14 @@ const onIndexAnime = () => {
         .catch(animeUi.onError)
 }
 
-const onShowAnime = () => {
+const onShowAnime = (e) => {
+    e.preventDefault()
 
+    const data = getFormFields(e.target)
+
+    animeApi.showAnime(data.anime.id)
+        .then(animeUi.onShowSuccess)
+        .catch(animeUi.onError)
 }
 const onUpdateAnime = () => {
 

@@ -53,13 +53,14 @@ const onIndexSuccess = (data) => {
     $('#anime-display').html(animeHtml)
 }
 
-const onShowSuccess = () => {
+const onShowSuccess = (data) => {
+    console.log(data)
+    const animeHtml = `
+        <h3>Title: ${data.anime.title}</h3>
+        <p>Description: ${data.anime.description}</>
+    `
+    $('#books-display').html(animeHtml)
 
-    setTimeout(() => {
-        $('#err-msg').html('')
-        $('#err-msg').removeClass('success')
-    }, 4000)
-    
     // reset all forms
     $('form').trigger('reset')
 }
