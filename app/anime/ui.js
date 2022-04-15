@@ -29,10 +29,63 @@ const onCreateSuccess = () => {
     $('form').trigger('reset')
 
 }
-const onIndexSuccess = () => {}
-const onShowSuccess = () => {}
-const onUpdateSuccess = () => {}
-const onDeleteSuccess = () => {}
+
+const onIndexSuccess = (data) => {
+    console.log(data)
+    const anime = data.anime
+
+    let animeHtml = ''
+
+    anime.forEach(anime => {
+        animeHtml += `
+            <h3>Title: ${anime.title}</h3>
+            <h5>ID: ${anime._id}</h5>
+            <p>Description: ${anime.description}</p>
+            <form class="dynamic-anime-update" data-id=${anime._id}>
+                <input type="text" name="anime[title]" placeholder="Anime Title Here" required>
+                <input type="text" name="anime[description]" placeholder="Enter a brief desctiption" required>
+                <button type="submit">Update Anime</button>
+            </form>
+            <button class="dynamic-anime-delete" data-id=${anime._id}>Delete Anime</button>
+        `
+    })
+    
+    $('#anime-display').html(animeHtml)
+}
+
+const onShowSuccess = () => {
+
+    setTimeout(() => {
+        $('#err-msg').html('')
+        $('#err-msg').removeClass('success')
+    }, 4000)
+    
+    // reset all forms
+    $('form').trigger('reset')
+}
+
+const onUpdateSuccess = () => {
+
+    setTimeout(() => {
+        $('#err-msg').html('')
+        $('#err-msg').removeClass('success')
+    }, 4000)
+    
+    // reset all forms
+    $('form').trigger('reset')
+}
+
+const onDeleteSuccess = () => {
+
+
+    setTimeout(() => {
+        $('#err-msg').html('')
+        $('#err-msg').removeClass('success')
+    }, 4000)
+    
+    // reset all forms
+    $('form').trigger('reset')
+}
 
 
 module.exports = {

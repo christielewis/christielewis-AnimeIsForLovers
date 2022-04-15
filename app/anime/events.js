@@ -6,14 +6,16 @@ const onCreateAnime = (e) => {
     e.preventDefault()
 
     const data = getFormFields(e.target)
-    
-    animeApi.create(data)
+
+    animeApi.createAnime(data)
         .then(animeUi.onCreateSuccess)
         .catch(animeUi.onError)
 }
 
 const onIndexAnime = () => {
-
+    animeApi.indexAnime()
+        .then(animeUi.onIndexSuccess)
+        .catch(animeUi.onError)
 }
 
 const onShowAnime = () => {

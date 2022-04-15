@@ -6,7 +6,7 @@ const createAnime = (data) => {
     console.log(data)
     return $.ajax({
         method: 'POST',
-        url: 'config.apiUrl' + '/anime',
+        url: config.apiUrl + '/anime',
         data: data
     })
 }
@@ -14,21 +14,21 @@ const createAnime = (data) => {
 const indexAnime = () => {
     return $.ajax({
         method: 'GET',
-        url: 'config.apiUrl' + '/anime'
+        url: config.apiUrl + '/anime'
     })
 }
 
 const showAnime = (id) => {
     return $.ajax({
         method: 'GET',
-        url: 'config.apiUrl' + '/anime/' + id
+        url: config.apiUrl + '/anime/' + id
     })
 }
 
 const updateAnime = (data, id) => {
     return $.ajax({
         method: 'PATCH',
-        url: 'config.apiUrl' + '/anime/' + id,
+        url: config.apiUrl + '/anime/' + id,
         data: data
     })
 }
@@ -36,7 +36,7 @@ const updateAnime = (data, id) => {
 const deleteAnime = (id) => {
     return $.ajax({
         method: 'DELETE',
-        url: 'config.apiUrl' + '/anime/' + id
+        url: config.apiUrl + '/anime/' + id
     })
 }
 
