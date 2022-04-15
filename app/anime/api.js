@@ -1,6 +1,6 @@
 // const { config } = require("grunt")
 
-// const config = require('./../config')
+const config = require('./../config')
 
 const createAnime = (data) => {
     console.log(data)
