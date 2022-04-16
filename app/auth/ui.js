@@ -3,6 +3,13 @@ const store = require('../store.js')
 const onSignUpSuccess = function() {
     $('#auth-status').html('<p>Sign Up Successful!</p>')
 
+    $('#sign-up').hide()
+    $('#sign-in').show()
+    $('#sign-out').hide()
+    $('#home-btn').hide()
+    // $('#welcome-pg').show()
+    // $('#welcome-pg').hide()
+
     setTimeout(() => {
         $('#auth-status').html('')
     }, 4000)
@@ -29,18 +36,22 @@ const onSignUpFailure = function() {
 const onSignInSuccess = function(response) {
     $('#auth-status').html('<p>Sign In Successful!</p>')
 
-    $('#sign-in').hide()
+    $('#home-btn').hide()
+    $('#change-pw-btn').show()
+    $('#anime-idx').show()
+    $('#anime-add-btn').show()
     $('#sign-out').show()
-    $('#sign-up').hide()
-    $('#welcome-pg').hide()
-    $('#change-pw').show()
-    $('#home-btn').show()
 
-    $('#create-anime').show()
-    $('#idx-anime').show()
-    $('#show-anime').show()
-    $('#update-anime').hide()
-    $('#delete-anime').hide()
+    $('#sign-in').hide()
+    $('#sign-up').hide()
+    // $('#welcome-pg').hide()
+    $('#change-pw').hide()
+
+    // $('#create-anime').hide()
+    // $('#idx-anime').hide()
+    // $('#show-anime').hide()
+    // $('#update-anime').hide()
+    // $('#delete-anime').hide()
 
     $('form').trigger('reset')
     console.log(response)

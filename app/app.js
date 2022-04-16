@@ -10,6 +10,9 @@ const animeEvents = require('./anime/events')
 $(() => {
   // your JS code goes here
   $('#home-btn').hide()
+  $('#change-pw-btn').hide()
+  $('#anime-add-btn').hide()
+  $('#home-pg').hide()
 
   $('#sign-up').hide()
   $('#sign-in').hide()
@@ -17,13 +20,16 @@ $(() => {
   $('#sign-out').hide()
 
   $('#create-anime').hide()
-  $('#idx-anime').hide()
+  $('#anime-idx').hide()
   $('#show-anime').hide()
   $('#update-anime').hide()
   $('#delete-anime').hide()
 
-  $('#home-btn').on('click', authEvents.onHome)
+  $('#home-btn').on('click', authEvents.onHomeBtn)
+  $('#change-pw-btn').on('click', authEvents.onChangePwBtn)
 
+  $('#anime-add-btn').on('click', animeEvents.onCreateAnimeBtn)
+  
   $('#welcome-sign-up').on('click', authEvents.onWelcomeSignUp)
   $('#welcome-sign-in').on('click', authEvents.onWelcomeSignIn)
 

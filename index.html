@@ -21,9 +21,7 @@
         <button id="welcome-sign-in">Sign In</button>
       </div>
 
-      <div>
-        <button id="home-btn">Home</button>
-      </div>
+
 
       <div class="hidden" id="sign-up">
         <h3>Sign Up</h3>
@@ -57,11 +55,17 @@
       </div>
       
       <div class="hidden" id="sign-out">
-        <h3>Quitting Already?</h3>
         <button id="sign-out-btn">Sign Out</button>
         <!-- <section id="auth-status-sign-out"></section> -->
       </div>
 <!-- ///////////// Anime Portion //////////////// -->
+
+      <div class="hidden" id="home-pg">
+          <button id="home-btn">Home</button>
+          <button id="change-pw-btn">Change Password</button>
+          <button id="anime-idx">Get All Anime</button>
+          <button id="anime-add-btn">Add Anime</button>
+      </div>
 
       <div class="hidden" id="create-anime">
         <h2>Add 💖Anime</h2>
@@ -73,10 +77,10 @@
           <div id="anime-create-msg"></div>
       </div>
 
-      <div class="hidden" id="idx-anime">
+      <!-- <div class="hidden" id="idx-anime">
         <h2>Show All Your Favorite Anime</h2>
         <button id="anime-idx">Get All Anime</button>
-      </div>
+      </div> -->
 
       <div class="hidden" id="show-anime">
         <h2>Show One Anime</h2>
@@ -94,8 +98,9 @@
           <input type="text" name="anime[description]" placeholder="Enter a brief description" required>
           <button type="submit">Update Anime</button>
         </form>
-        <div id="anime-update-msg"></div>
       </div> -->
+      <div id="anime-update-msg"></div>
+      <div id="anime-delete-msg"></div>
 
       <!-- <div class="hidden" id="delete-anime">
         <h2>Delete An Anime</h2>
@@ -103,7 +108,6 @@
           <input type="text" name="anime[id]" placeholder="Anime ID Here" required>
           <button type="submit">Delete Anime</button>
         </form>
-        <div id="anime-delete-msg"></div>
       </div> -->
 
       <section id="msgs">

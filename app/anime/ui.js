@@ -58,6 +58,9 @@ const onIndexSuccess = (data) => {
     $('#update-anime').hide()
     $('#delete-anime').hide()
     $('#home-btn').show()
+    $('#change-pw-btn').show()
+    $('#anime-add-btn').show()
+    $('#anime-idx').show()
 }
 
 const onShowSuccess = (data) => {
@@ -79,7 +82,6 @@ const onShowSuccess = (data) => {
     $('form').trigger('reset')
 
     $('#create-anime').hide()
-    $('#idx-anime').hide()
     // $('#show-anime').hide()
     $('#update-anime').hide()
     $('#delete-anime').hide()
@@ -90,6 +92,8 @@ const onUpdateSuccess = () => {
 
     $('#anime-update-msg').html('Anime updated successfully!')
     $('#anime-update-msg').addClass('success')
+
+    $('anime-idx').show()
 
 
     setTimeout(() => {
@@ -106,6 +110,8 @@ const onUpdateSuccess = () => {
 const onDeleteSuccess = () => {
     $('#anime-delete-msg').html('Anime deleted successfully!')
     $('#anime-delete-msg').addClass('success')
+
+    $('anime-idx').show()
 
 
     setTimeout(() => {

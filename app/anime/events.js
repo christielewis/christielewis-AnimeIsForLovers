@@ -2,6 +2,41 @@ const animeApi = require('./api')
 const animeUi = require('./ui')
 const getFormFields = require('../../lib/get-form-fields')
 
+const onCreateAnimeBtn = () => {
+    $('#create-anime').show()
+    $('#show-anime').hide()
+    $('#update-anime').hide()
+    $('#delete-anime').hide()
+    
+    $('#sign-out').show()
+    $('#home-btn').show()
+    $('#change-pw-btn').show()
+    $('#anime-idx').show()
+    $('#anime-add-btn').hide()
+    $('#anime-del-btn').hide()
+
+    $('#auth-status').html('')
+    $('#err-msg').html('')
+    $('#anime-display').html('')
+}
+const onShowAnimeBtn = () => {
+    $('#create-anime').hide()
+    $('#idx-anime').hide()
+    $('#show-anime').show()
+    $('#update-anime').hide()
+    $('#delete-anime').hide()
+
+    $('#sign-out').show()
+    $('#home-btn').show()
+    $('#change-pw-btn').show()
+    $('#anime-add-btn').hide()
+    $('#anime-del-btn').hide()
+
+    $('#auth-status').html('')
+    $('#err-msg').html('')
+    $('#anime-display').html('')
+}
+
 const onCreateAnime = (e) => {
     e.preventDefault()
 
@@ -66,10 +101,10 @@ const onDynamicUpdateAnime = (e) => {
     const data = getFormFields(e.target)
     const title = data.anime.title
     const description = data.anime.description
-
+    
     animeApi.updateAnime(id, title, description)
-        .then(animeUi.onUpdateSuccess)
-        .catch(animeUi.onError)
+    .then(animeUi.onUpdateSuccess)
+    .catch(animeUi.onError)
 }
 
 const onDynamicDeleteAnime = (e) => {
@@ -88,5 +123,7 @@ module.exports = {
     onUpdateAnime,
     onDeleteAnime,
     onDynamicUpdateAnime,
-    onDynamicDeleteAnime
+    onDynamicDeleteAnime,
+    onCreateAnimeBtn,
+    onShowAnimeBtn
 }

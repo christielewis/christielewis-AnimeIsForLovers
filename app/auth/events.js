@@ -2,13 +2,39 @@ const authApi = require('./api.js')
 const authUi = require('./ui.js')
 const getFormFields = require('../../lib/get-form-fields.js')
 
-const onHome = () => {
-    $('#create-anime').show()
-    $('#idx-anime').show()
-    $('#show-anime').show()
+const onHomeBtn = () => {
+    $('#home-btn').hide()
+    $('#anime-idx').show()
+    $('#anime-add-btn').show()
+    $('#change-pw-btn').show()
+    $('#sign-out').show()
+    
+    $('#change-pw').hide()
+
+    $('#create-anime').hide()
+    $('#show-anime').hide()
     $('#update-anime').show()
     $('#delete-anime').show()
-    $('#home-btn').hide()
+
+    $('#auth-status').html('')
+    $('#err-msg').html('')
+    $('#anime-display').html('')
+}
+
+const onChangePwBtn = () => {
+    $('#change-pw').show()
+
+    $('#sign-out').show()
+    $('#home-btn').show()
+    $('#change-pw-btn').hide()
+    $('#anime-add-btn').hide()
+    $('#anime-del-btn').hide()
+    $('#anime-idx').hide()
+
+    $('#create-anime').hide()
+    $('#show-anime').hide()
+    $('#update-anime').hide()
+    $('#delete-anime').hide()
 
     $('#auth-status').html('')
     $('#err-msg').html('')
@@ -36,12 +62,6 @@ const onSignUp = (e) => {
     const data = getFormFields(form)
     console.log(data)
 
-    // $('#welcome-pg').show()
-    // $('#welcome-pg').hide()
-    $('#sign-up').hide()
-    $('#sign-in').show()
-    $('#sign-out').hide()
-    $('#home-btn').hide()
     
     if(data.credentials.password !== data.credentials.password_confirmation) {
         $('#auth-status').html('<p>Passwords entered do not match.<br>Try again!</p>');
@@ -63,18 +83,7 @@ const onSignIn = (e) => {
     const data = getFormFields(form)
     console.log(data)
 
-    // $('#welcome-pg').hide()
-    // $('#sign-up').hide()
-    // $('#sign-in').hide()
-    // $('#sign-out').show()
-    // $('#change-pw').show()
-
-    // $('#create-anime').show()
-    // $('#idx-anime').show()
-    // $('#show-anime').show()
-    // $('#update-anime').show()
-    // $('#delete-anime').show()
-    // $('#home-btn').show()
+    $('#home-pg').show()
     
     authApi.signIn(data)
         .then((response) => authUi.onSignInSuccess(response))
@@ -108,7 +117,7 @@ const onSignOut = () => {
     $('#change-pw').hide()
 
     $('#create-anime').hide()
-    $('#idx-anime').hide()
+    $('#anime-idx').hide()
     $('#show-anime').hide()
     $('#update-anime').hide()
     $('#delete-anime').hide()
@@ -120,7 +129,8 @@ const onSignOut = () => {
 }
 
 module.exports = {
-    onHome,
+    onHomeBtn,
+    onChangePwBtn,
     onSignUp,
     onSignIn,
     onChangePW,
