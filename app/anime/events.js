@@ -50,10 +50,43 @@ const onDeleteAnime = (e) => {
         .catch(animeUi.onError)
 }
 
+// const onDynUpBtn = () => {
+//     $('.dynamic-anime-update-form').show()
+//     $('.dynamic-anime-update-btn').hide()
+// }
+
+const onDynamicUpdateAnime = (e) => {
+    e.preventDefault()
+    
+    // onDynUpBtn()
+
+    const dynUpdate = e.target
+    const id = $(dynUpdate).data('id')
+
+    const data = getFormFields(e.target)
+    const title = data.anime.title
+    const description = data.anime.description
+
+    animeApi.updateAnime(id, title, description)
+        .then(animeUi.onUpdateSuccess)
+        .catch(animeUi.onError)
+}
+
+const onDynamicDeleteAnime = (e) => {
+    const deleteBtn = e.target
+    const id = $(deleteBtn).data('id')
+
+    animeApi.deleteAnime(id)
+        .then(animeUi.onDeleteSuccess)
+        .catch(animeUi.onError)
+}
+
 module.exports = {
     onCreateAnime,
     onIndexAnime,
     onShowAnime,
     onUpdateAnime,
-    onDeleteAnime
+    onDeleteAnime,
+    onDynamicUpdateAnime,
+    onDynamicDeleteAnime
 }

@@ -9,10 +9,21 @@ const animeEvents = require('./anime/events')
 
 $(() => {
   // your JS code goes here
+  $('#home-btn').hide()
+
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#change-pw').hide()
   $('#sign-out').hide()
+
+  $('#create-anime').hide()
+  $('#idx-anime').hide()
+  $('#show-anime').hide()
+  $('#update-anime').hide()
+  $('#delete-anime').hide()
+
+  $('#home-btn').on('click', authEvents.onHome)
+
   $('#welcome-sign-up').on('click', authEvents.onWelcomeSignUp)
   $('#welcome-sign-in').on('click', authEvents.onWelcomeSignIn)
 
@@ -29,7 +40,12 @@ $(() => {
   $('#anime-update').on('submit', animeEvents.onUpdateAnime)
   $('#anime-delete').on('submit', animeEvents.onDeleteAnime)
 
-  $('#anime-display').on('click', '.dynamic-anime-update', animeEvents.onDynamicUpdateAnime)
-  $('#anime-display').on('submit', '.dynamic-anime-delete', animeEvents.onDynamicDeleteAnime)
+  $('#anime-display').on('submit', '.dynamic-anime-update', animeEvents.onDynamicUpdateAnime)
+  $('#anime-display').on('click', '.dynamic-anime-delete', animeEvents.onDynamicDeleteAnime)
+  
+  // $('#anime-display').on('click', '.dynamic-anime-update-btn', animeEvents.onDynUpBtn)
+  // $('.dynamic-anime-update-btn').show()
+  // // $('.dynamic-anime-update-btn').on('click', animeEvents.onDynUpBtn)
+  // $('.dynamic-anime-update-form').hide()
 
 })
