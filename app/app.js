@@ -13,6 +13,10 @@ $(() => {
   $('#change-pw-btn').hide()
   $('#anime-add-btn').hide()
   $('#home-pg').hide()
+  $('#anime-idx').hide()
+  $('#anime-show-btn').hide()
+  $('#anime-delete-btn').hide()
+  $('#anime-update-btn').hide()
 
   $('#sign-up').hide()
   $('#sign-in').hide()
@@ -29,6 +33,9 @@ $(() => {
   $('#change-pw-btn').on('click', authEvents.onChangePwBtn)
 
   $('#anime-add-btn').on('click', animeEvents.onCreateAnimeBtn)
+  $('#anime-show-btn').on('click', animeEvents.onShowAnimeBtn)
+  $('#anime-update-btn').on('click', animeEvents.onUpdateAnimeBtn)
+  $('#anime-delete-btn').on('click', animeEvents.onDeleteAnimeBtn)
   
   $('#welcome-sign-up').on('click', authEvents.onWelcomeSignUp)
   $('#welcome-sign-in').on('click', authEvents.onWelcomeSignIn)

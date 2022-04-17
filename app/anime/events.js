@@ -3,39 +3,107 @@ const animeUi = require('./ui')
 const getFormFields = require('../../lib/get-form-fields')
 
 const onCreateAnimeBtn = () => {
+    // FORMS //
     $('#create-anime').show()
     $('#show-anime').hide()
     $('#update-anime').hide()
     $('#delete-anime').hide()
-    
+    // $('#change-pw').hide()
+
+    // BUTTONS //
     $('#sign-out').show()
     $('#home-btn').show()
     $('#change-pw-btn').show()
     $('#anime-idx').show()
     $('#anime-add-btn').hide()
-    $('#anime-del-btn').hide()
+    $('#anime-show-btn').show()
+    $('#anime-delete-btn').show()
+    $('#anime-update-btn').show()
 
     $('#auth-status').html('')
     $('#err-msg').html('')
     $('#anime-display').html('')
 }
 const onShowAnimeBtn = () => {
+    // FORMS //
     $('#create-anime').hide()
-    $('#idx-anime').hide()
     $('#show-anime').show()
     $('#update-anime').hide()
     $('#delete-anime').hide()
 
+    // BUTTONS //
     $('#sign-out').show()
     $('#home-btn').show()
     $('#change-pw-btn').show()
-    $('#anime-add-btn').hide()
-    $('#anime-del-btn').hide()
+    $('#anime-idx').show()
+    $('#anime-add-btn').show()
+    $('#anime-show-btn').hide()
+    $('#anime-delete-btn').show()
+    $('#anime-update-btn').show()
+
 
     $('#auth-status').html('')
     $('#err-msg').html('')
     $('#anime-display').html('')
+
+    animeApi.miniIndexAnime()
+        .then(animeUi.onMiniIdxSuccess)
+        .catch(animeUi.onError)
 }
+
+const onUpdateAnimeBtn = () => {
+    // FORMS //
+    $('#create-anime').hide()
+    $('#show-anime').hide()
+    $('#update-anime').show()
+    $('#delete-anime').hide()
+
+    // BUTTONS //
+    $('#sign-out').show()
+    $('#home-btn').show()
+    $('#change-pw-btn').show()
+    $('#anime-idx').show()
+    $('#anime-add-btn').show()
+    $('#anime-show-btn').show()
+    $('#anime-delete-btn').show()
+    $('#anime-update-btn').hide()
+    
+    $('#auth-status').html('')
+    $('#err-msg').html('')
+    $('#anime-display').html('')
+
+    animeApi.miniIndexAnime()
+        .then(animeUi.onMiniIdxSuccess)
+        .catch(animeUi.onError)
+}
+
+const onDeleteAnimeBtn = () => {
+    // FORMS //
+    $('#create-anime').hide()
+    $('#show-anime').hide()
+    $('#update-anime').hide()
+    $('#delete-anime').show()
+
+    // BUTTONS //
+    $('#sign-out').show()
+    $('#home-btn').show()
+    $('#change-pw-btn').show()
+    $('#anime-idx').show()
+    $('#anime-add-btn').show()
+    $('#anime-show-btn').show()
+    $('#anime-delete-btn').hide()
+    $('#anime-update-btn').show()
+
+    $('#auth-status').html('')
+    $('#err-msg').html('')
+    $('#anime-display').html('')
+
+    animeApi.miniIndexAnime()
+        .then(animeUi.onMiniIdxSuccess)
+        .catch(animeUi.onError)
+    // animeUi.onMiniIdxSuccess
+}
+
 
 const onCreateAnime = (e) => {
     e.preventDefault()
@@ -103,8 +171,8 @@ const onDynamicUpdateAnime = (e) => {
     const description = data.anime.description
     
     animeApi.updateAnime(id, title, description)
-    .then(animeUi.onUpdateSuccess)
-    .catch(animeUi.onError)
+        .then(animeUi.onUpdateSuccess)
+        .catch(animeUi.onError)
 }
 
 const onDynamicDeleteAnime = (e) => {
@@ -125,5 +193,7 @@ module.exports = {
     onDynamicUpdateAnime,
     onDynamicDeleteAnime,
     onCreateAnimeBtn,
+    onUpdateAnimeBtn,
+    onDeleteAnimeBtn,
     onShowAnimeBtn
 }

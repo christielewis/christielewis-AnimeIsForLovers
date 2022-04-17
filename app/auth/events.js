@@ -3,18 +3,26 @@ const authUi = require('./ui.js')
 const getFormFields = require('../../lib/get-form-fields.js')
 
 const onHomeBtn = () => {
+    // BUTTONS //
+    $('#sign-out').show()
     $('#home-btn').hide()
+    $('#change-pw-btn').show()
     $('#anime-idx').show()
     $('#anime-add-btn').show()
-    $('#change-pw-btn').show()
-    $('#sign-out').show()
-    
-    $('#change-pw').hide()
+    $('#anime-show-btn').show()
+    $('#anime-delete-btn').show()
+    $('#anime-update-btn').show()
 
+    // FORMS //
     $('#create-anime').hide()
     $('#show-anime').hide()
-    $('#update-anime').show()
-    $('#delete-anime').show()
+    $('#update-anime').hide()
+    $('#delete-anime').hide()
+    $('#change-pw').hide()
+
+    // $('#show-anime').show()
+    // $('#update-anime').show()
+    // $('#delete-anime').show()
 
     $('#auth-status').html('')
     $('#err-msg').html('')
@@ -22,19 +30,22 @@ const onHomeBtn = () => {
 }
 
 const onChangePwBtn = () => {
+    // FORMS //
     $('#change-pw').show()
-
-    $('#sign-out').show()
-    $('#home-btn').show()
-    $('#change-pw-btn').hide()
-    $('#anime-add-btn').hide()
-    $('#anime-del-btn').hide()
-    $('#anime-idx').hide()
-
     $('#create-anime').hide()
     $('#show-anime').hide()
     $('#update-anime').hide()
     $('#delete-anime').hide()
+
+    // BUTTONS //
+    $('#sign-out').show()
+    $('#home-btn').show()
+    $('#change-pw-btn').hide()
+    $('#anime-idx').hide()
+    $('#anime-add-btn').hide()
+    $('#anime-show-btn').hide()
+    $('#anime-delete-btn').hide()
+    $('#anime-update-btn').hide()
 
     $('#auth-status').html('')
     $('#err-msg').html('')
@@ -109,6 +120,7 @@ const onChangePW = (e) => {
 }
 
 const onSignOut = () => {
+    $('#home-pg').hide()
 
     $('#sign-up').hide()
     $('#sign-in').hide()

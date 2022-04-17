@@ -16,6 +16,16 @@ const createAnime = (data) => {
     })
 }
 
+const miniIndexAnime = () => {
+    return $.ajax({
+        method: 'GET',
+        url: config.apiUrl + '/anime',
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
+    })
+}
+
 const indexAnime = () => {
     return $.ajax({
         method: 'GET',
@@ -66,6 +76,7 @@ const deleteAnime = (id) => {
 module.exports = {
     createAnime,
     indexAnime,
+    miniIndexAnime,
     showAnime,
     updateAnime,
     deleteAnime

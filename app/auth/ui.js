@@ -25,7 +25,15 @@ const onSignUpFailure = function() {
     $('#sign-in').hide()
     $('#welcome-pg').hide()
     $('#change-pw').hide()
+
+    // BUTTONS //
     $('#home-btn').hide()
+    $('#change-pw-btn').hide()
+    $('#anime-idx').hide()
+    $('#anime-add-btn').hide()
+    $('#anime-show-btn').hide()
+    $('#anime-delete-btn').hide()
+    $('#anime-update-btn').hide()
 
     $('#create-anime').hide()
     $('#idx-anime').hide()
@@ -33,14 +41,25 @@ const onSignUpFailure = function() {
     $('#update-anime').hide()
     $('#delete-anime').hide()
 }
+
 const onSignInSuccess = function(response) {
     $('#auth-status').html('<p>Sign In Successful!</p>')
 
+    // BUTTONS //
+    $('#sign-out').show()
     $('#home-btn').hide()
     $('#change-pw-btn').show()
     $('#anime-idx').show()
     $('#anime-add-btn').show()
-    $('#sign-out').show()
+    $('#anime-show-btn').show()
+    $('#anime-delete-btn').show()
+    $('#anime-update-btn').show()
+
+    // $('#home-btn').hide()
+    // $('#change-pw-btn').show()
+    // $('#anime-idx').show()
+    // $('#anime-add-btn').show()
+    // $('#sign-out').show()
 
     $('#sign-in').hide()
     $('#sign-up').hide()
@@ -53,13 +72,14 @@ const onSignInSuccess = function(response) {
     // $('#update-anime').hide()
     // $('#delete-anime').hide()
 
-    $('form').trigger('reset')
     console.log(response)
     store.user = response.user
 
     setTimeout(() => {
         $('#auth-status').html('')
     }, 4000)
+
+    $('form').trigger('reset')
 
 }
 
@@ -72,6 +92,15 @@ const onSignInFailure = function() {
     $('#welcome-pg').hide()
     $('#change-pw').hide()
     $('#home-btn').hide()
+
+    // BUTTONS //
+    $('#home-btn').hide()
+    $('#change-pw-btn').hide()
+    $('#anime-idx').hide()
+    $('#anime-add-btn').hide()
+    $('#anime-show-btn').hide()
+    $('#anime-delete-btn').hide()
+    $('#anime-update-btn').hide()
 
     $('#create-anime').hide()
     $('#idx-anime').hide()
