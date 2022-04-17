@@ -20,10 +20,6 @@ const onHomeBtn = () => {
     $('#delete-anime').hide()
     $('#change-pw').hide()
 
-    // $('#show-anime').show()
-    // $('#update-anime').show()
-    // $('#delete-anime').show()
-
     $('#auth-status').html('')
     $('#err-msg').html('')
     $('#anime-display').html('')
@@ -54,7 +50,6 @@ const onChangePwBtn = () => {
 
 const onWelcomeSignUp = () => {
     $('#welcome-pg').hide()
-    // $('#title').hide()
     $('#sign-up').show()
     $('#home-btn').hide()
 }
@@ -67,7 +62,6 @@ const onWelcomeSignIn = () => {
 
 const onSignUp = (e) => {
     e.preventDefault()
-    // console.log('yerrrrr');
 
     const form = e.target
     const data = getFormFields(form)

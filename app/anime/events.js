@@ -8,7 +8,6 @@ const onCreateAnimeBtn = () => {
     $('#show-anime').hide()
     $('#update-anime').hide()
     $('#delete-anime').hide()
-    // $('#change-pw').hide()
 
     // BUTTONS //
     $('#sign-out').show()
@@ -101,7 +100,6 @@ const onDeleteAnimeBtn = () => {
     animeApi.miniIndexAnime()
         .then(animeUi.onMiniIdxSuccess)
         .catch(animeUi.onError)
-    // animeUi.onMiniIdxSuccess
 }
 
 
@@ -155,11 +153,6 @@ const onDeleteAnime = (e) => {
         .then(animeUi.onDeleteSuccess)
         .catch(animeUi.onError)
 }
-
-// const onDynUpBtn = () => {
-//     $('.dynamic-anime-update-form').show()
-//     $('.dynamic-anime-update-btn').hide()
-// }
 
 const onDynamicUpdateAnime = (e) => {
     e.preventDefault()

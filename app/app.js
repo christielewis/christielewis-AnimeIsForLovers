@@ -1,37 +1,21 @@
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-
 const authEvents = require('./auth/events')
 const animeEvents = require('./anime/events')
-
-// use require without a reference to ensure a file is bundled
-// require('./example')
 
 $(() => {
   // BUTTONS //
   $('#home-pg').hide()
   $('#home-btn').hide()
   $('#change-pw-btn').hide()
-  $('#anime-add-btn').hide()
-  $('#anime-idx').hide()
-  $('#anime-show-btn').hide()
-  $('#anime-delete-btn').hide()
-  $('#anime-update-btn').hide()
-
+  
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#change-pw').hide()
   $('#sign-out').hide()
-
-  $('#create-anime').hide()
-  $('#anime-idx').hide()
-  $('#show-anime').hide()
-  $('#update-anime').hide()
-  $('#delete-anime').hide()
-
+  
+  
   $('#home-btn').on('click', authEvents.onHomeBtn)
   $('#change-pw-btn').on('click', authEvents.onChangePwBtn)
-
+  
   $('#welcome-sign-up').on('click', authEvents.onWelcomeSignUp)
   $('#welcome-sign-in').on('click', authEvents.onWelcomeSignIn)
   
@@ -41,7 +25,19 @@ $(() => {
   $('#change-pw-form').on('submit', authEvents.onChangePW)
   
   // ///////// ANIME EVENT LISTENERS /////////////
-
+  
+  $('#anime-add-btn').hide()
+  $('#anime-idx').hide()
+  $('#anime-show-btn').hide()
+  $('#anime-delete-btn').hide()
+  $('#anime-update-btn').hide()
+  
+  $('#create-anime').hide()
+  $('#anime-idx').hide()
+  $('#show-anime').hide()
+  $('#update-anime').hide()
+  $('#delete-anime').hide()
+  
   $('#anime-add-btn').on('click', animeEvents.onCreateAnimeBtn)
   $('#anime-show-btn').on('click', animeEvents.onShowAnimeBtn)
   $('#anime-update-btn').on('click', animeEvents.onUpdateAnimeBtn)
