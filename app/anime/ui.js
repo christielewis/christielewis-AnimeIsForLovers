@@ -100,7 +100,6 @@ const onShowSuccess = (data) => {
             <button type="submit">Update Anime</button>
         </form>
         <button class="dynamic-anime-delete" data-id=${data.anime._id}>Delete Anime</button>
-        <div id="anime-dyn-msg"></div>
     `
 
     $('#anime-display').html(animeHtml)
@@ -120,8 +119,7 @@ const onShowSuccess = (data) => {
 const onUpdateSuccess = () => {
 
     $('#anime-update-msg').html('Anime updated successfully!')
-    $('#anime-dyn-msg').html('Anime updated successfully!')
-    $('#anime-display').html('Your Anime list has changed! Click "Get All Anime" again to see your updated list.')
+    $('#anime-dyn-msg').html('<h4>Anime updated successfully!<br/>Your Anime list has changed! Click "Get All Anime" again to see your updated list.</h4>')
     $('#anime-update-msg').addClass('success')
 
     // $('anime-idx').show()
@@ -129,8 +127,7 @@ const onUpdateSuccess = () => {
 
     setTimeout(() => {
         $('#anime-update-msg').html('')
-        $('#anime-dyn-update-msg').html('')
-        $('#anime-display').html('')
+        $('#anime-dyn-msg').html('')
         $('#anime-update-msg').removeClass('success')
     }, 4000)
     
@@ -145,8 +142,7 @@ const onUpdateSuccess = () => {
 
 const onDeleteSuccess = () => {
     $('#anime-delete-msg').html('Anime deleted successfully!')
-    $('#anime-dyn-msg').html('Anime deleted successfully!')
-    $('#anime-display').html('Your Anime list has changed! Click "Get All Anime" again to see your updated list.')
+    $('#anime-dyn-msg').html('Anime deleted successfully! Your Anime list has changed! Click "Get All Anime" again to see your updated list.')
     $('#anime-delete-msg').addClass('success')
 
     // $('anime-idx').show()
@@ -156,7 +152,6 @@ const onDeleteSuccess = () => {
     setTimeout(() => {
         $('#anime-delete-msg').html('')
         $('#anime-dyn-msg').html('')
-        $('#anime-display').html('')
         $('#anime-delete-msg').removeClass('success')
     }, 4000)
     
