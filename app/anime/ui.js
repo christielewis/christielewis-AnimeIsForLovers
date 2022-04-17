@@ -54,9 +54,13 @@ const onIndexSuccess = (data) => {
             <h3>Title: ${anime.title}</h3>
             <p>ID: ${anime._id}</p>
             <p>Description: ${anime.description}</p>
+            <p>Season: ${anime.season}</p>
+            <p>Episode: ${anime.episode}</p>
             <form class="dynamic-anime-update" data-id=${anime._id}>
                 <input type="text" name="anime[title]" placeholder="Anime Title Here" required>
                 <input type="text" name="anime[description]" placeholder="Enter a brief desctiption" required>
+                <input type="number" name="anime[season]" placeholder="Season" required>
+                <input type="number" name="anime[episode]" placeholder="Episode" required>
                 <button type="submit">Update Anime</button>
             </form>
             <button class="dynamic-anime-delete" data-id=${anime._id}>Delete</button>
@@ -69,7 +73,7 @@ const onIndexSuccess = (data) => {
     $('#show-anime').hide()
     $('#update-anime').hide()
     $('#delete-anime').hide()
-    
+
     $('#home-btn').show()
     $('#change-pw-btn').show()
     $('#anime-add-btn').show()
@@ -86,9 +90,13 @@ const onShowSuccess = (data) => {
         <h3>Title: ${data.anime.title}</h3>
         <p>ID: ${data.anime._id}</p>
         <p>Description: ${data.anime.description}</>
+        <p>Season: ${data.anime.season}</p>
+        <p>Episode: ${data.anime.episode}</p>
         <form class="dynamic-anime-update" data-id=${data.anime._id}>
             <input type="text" name="anime[title]" placeholder="Anime Title Here" required>
             <input type="text" name="anime[description]" placeholder="Enter a brief desctiption" required>
+            <input type="number" name="anime[season]" placeholder="Season" required>
+            <input type="number" name="anime[episode]" placeholder="Episode" required>
             <button type="submit">Update Anime</button>
         </form>
         <button class="dynamic-anime-delete" data-id=${data.anime._id}>Delete Anime</button>

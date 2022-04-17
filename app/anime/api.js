@@ -32,6 +32,7 @@ const indexAnime = () => {
         url: config.apiUrl + '/anime',
         headers: {
             Authorization: 'Bearer ' + store.user.token
+
         }
     })
 }
@@ -46,7 +47,7 @@ const showAnime = (id) => {
     })
 }
 
-const updateAnime = (id, title, description) => {
+const updateAnime = (id, title, description, season, episode) => {
     console.log(store)
     return $.ajax({
         method: 'PATCH',
@@ -54,7 +55,9 @@ const updateAnime = (id, title, description) => {
         data: {
             "anime": {
                 "title": title,
-                "description": description
+                "description": description,
+                "season": season,
+                "episode": episode,
             }
         },
         headers: {

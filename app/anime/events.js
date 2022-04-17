@@ -130,6 +130,7 @@ const onShowAnime = (e) => {
         .then(animeUi.onShowSuccess)
         .catch(animeUi.onError)
 }
+
 const onUpdateAnime = (e) => {
     e.preventDefault()
 
@@ -137,8 +138,10 @@ const onUpdateAnime = (e) => {
     const id = data.anime.id
     const title = data.anime.title
     const description = data.anime.description
+    const season = data.anime.season
+    const episode = data.anime.episode
 
-    animeApi.updateAnime(id, title, description)
+    animeApi.updateAnime(id, title, description, season, episode)
         .then(animeUi.onUpdateSuccess)
         .catch(animeUi.onError)
 }
