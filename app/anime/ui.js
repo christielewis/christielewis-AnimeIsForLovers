@@ -121,6 +121,7 @@ const onUpdateSuccess = () => {
 
     $('#anime-update-msg').html('Anime updated successfully!')
     $('#anime-dyn-msg').html('Anime updated successfully!')
+    $('#anime-display').html('Your Anime list has changed! Click "Get All Anime" again to see your updated list.')
     $('#anime-update-msg').addClass('success')
 
     // $('anime-idx').show()
@@ -129,6 +130,7 @@ const onUpdateSuccess = () => {
     setTimeout(() => {
         $('#anime-update-msg').html('')
         $('#anime-dyn-update-msg').html('')
+        $('#anime-display').html('')
         $('#anime-update-msg').removeClass('success')
     }, 4000)
     
@@ -136,6 +138,7 @@ const onUpdateSuccess = () => {
     $('form').trigger('reset')
 
     $('#anime-update-btn').show()
+    $('#update-anime').hide()
 
     // $('#home-btn').show()
 }
@@ -143,6 +146,7 @@ const onUpdateSuccess = () => {
 const onDeleteSuccess = () => {
     $('#anime-delete-msg').html('Anime deleted successfully!')
     $('#anime-dyn-msg').html('Anime deleted successfully!')
+    $('#anime-display').html('Your Anime list has changed! Click "Get All Anime" again to see your updated list.')
     $('#anime-delete-msg').addClass('success')
 
     // $('anime-idx').show()
@@ -152,6 +156,7 @@ const onDeleteSuccess = () => {
     setTimeout(() => {
         $('#anime-delete-msg').html('')
         $('#anime-dyn-msg').html('')
+        $('#anime-display').html('')
         $('#anime-delete-msg').removeClass('success')
     }, 4000)
     

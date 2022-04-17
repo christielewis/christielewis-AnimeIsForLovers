@@ -8,11 +8,11 @@ const animeEvents = require('./anime/events')
 // require('./example')
 
 $(() => {
-  // your JS code goes here
+  // BUTTONS //
+  $('#home-pg').hide()
   $('#home-btn').hide()
   $('#change-pw-btn').hide()
   $('#anime-add-btn').hide()
-  $('#home-pg').hide()
   $('#anime-idx').hide()
   $('#anime-show-btn').hide()
   $('#anime-delete-btn').hide()
@@ -32,20 +32,20 @@ $(() => {
   $('#home-btn').on('click', authEvents.onHomeBtn)
   $('#change-pw-btn').on('click', authEvents.onChangePwBtn)
 
+  $('#welcome-sign-up').on('click', authEvents.onWelcomeSignUp)
+  $('#welcome-sign-in').on('click', authEvents.onWelcomeSignIn)
+  
+  $('#sign-up-form').on('submit', authEvents.onSignUp)
+  $('#sign-in-form').on('submit', authEvents.onSignIn)
+  $('#sign-out-btn').on('click', authEvents.onSignOut)
+  $('#change-pw-form').on('submit', authEvents.onChangePW)
+  
+  // ///////// ANIME EVENT LISTENERS /////////////
+
   $('#anime-add-btn').on('click', animeEvents.onCreateAnimeBtn)
   $('#anime-show-btn').on('click', animeEvents.onShowAnimeBtn)
   $('#anime-update-btn').on('click', animeEvents.onUpdateAnimeBtn)
   $('#anime-delete-btn').on('click', animeEvents.onDeleteAnimeBtn)
-  
-  $('#welcome-sign-up').on('click', authEvents.onWelcomeSignUp)
-  $('#welcome-sign-in').on('click', authEvents.onWelcomeSignIn)
-
-  $('#sign-up-form').on('submit', authEvents.onSignUp)
-  $('#sign-in-form').on('submit', authEvents.onSignIn)
-  $('#sign-out').on('click', authEvents.onSignOut)
-  $('#change-pw-form').on('submit', authEvents.onChangePW)
-
-  // ///////// ANIME EVENT LISTENERS /////////////
 
   $('#anime-create').on('submit', animeEvents.onCreateAnime)
   $('#anime-idx').on('click', animeEvents.onIndexAnime)
