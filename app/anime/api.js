@@ -3,8 +3,8 @@ const config = require('../config')
 const store = require('../store')
 
 const createAnime = (data) => {
-    console.log(data)
-    console.log(store)
+    // console.log(data)
+    // console.log(store)
 
     return $.ajax({
         method: 'POST',
@@ -48,7 +48,7 @@ const showAnime = (id) => {
 }
 
 const updateAnime = (id, title, description, season, episode) => {
-    console.log(store)
+    // console.log(store)
     return $.ajax({
         method: 'PATCH',
         url: config.apiUrl + '/anime/' + id,

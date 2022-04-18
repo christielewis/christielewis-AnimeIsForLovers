@@ -65,7 +65,7 @@ const onSignUp = (e) => {
 
     const form = e.target
     const data = getFormFields(form)
-    console.log(data)
+    // console.log(data)
 
     
     if(data.credentials.password !== data.credentials.password_confirmation) {
@@ -86,7 +86,7 @@ const onSignIn = (e) => {
     // $('#sign').toggleClass('hidden')
     const form = e.target
     const data = getFormFields(form)
-    console.log(data)
+    // console.log(data)
 
     $('#home-pg').show()
     

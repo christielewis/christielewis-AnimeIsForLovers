@@ -1,5 +1,5 @@
 const onError = (err) => {
-    console.error(err)
+    // console.error(err)
 
     // display error message to inform user of an error in user action
     $('#err-msg').html('Something went wrong. Please try again.')
@@ -45,7 +45,7 @@ const onMiniIdxSuccess = (data) => {
 
 const onIndexSuccess = (data) => {
     const anime = data.anime
-    console.log(data)
+    // console.log(data)
 
     let animeHtml = ''
 
@@ -84,7 +84,7 @@ const onIndexSuccess = (data) => {
 }
 
 const onShowSuccess = (data) => {
-    console.log(data)
+    // console.log(data)
 
     const animeHtml = `
         <h3>Title: ${data.anime.title}</h3>

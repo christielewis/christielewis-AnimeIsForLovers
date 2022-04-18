@@ -57,7 +57,7 @@ const onSignInSuccess = function(response) {
     $('#sign-up').hide()
     $('#change-pw').hide()
 
-    console.log(response)
+    // console.log(response)
     store.user = response.user
 
     setTimeout(() => {
