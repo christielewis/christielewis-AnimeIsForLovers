@@ -118,8 +118,8 @@ const onShowSuccess = (data) => {
 
 const onUpdateSuccess = () => {
 
-    $('#anime-update-msg').html('Anime updated successfully!')
-    $('#anime-dyn-msg').html('<h4>Anime updated successfully!<br/>Your Anime list has changed! Click "Get All Anime" again to see your updated list.</h4>')
+    $('#anime-update-msg').html('<h6>Anime updated successfully!</h6>')
+    $('#anime-dyn-msg').html('<h6>Anime updated successfully!<br/>Your Anime list has changed! Click "Get All Anime" again to see your updated list.</h6>')
     $('#anime-update-msg').addClass('success')
 
     setTimeout(() => {
@@ -133,11 +133,13 @@ const onUpdateSuccess = () => {
 
     $('#anime-update-btn').show()
     $('#update-anime').hide()
+
+    $('#anime-display').html('')
 }
 
 const onDeleteSuccess = () => {
     $('#anime-delete-msg').html('Anime deleted successfully!')
-    $('#anime-dyn-msg').html('Anime deleted successfully! Your Anime list has changed! Click "Get All Anime" again to see your updated list.')
+    $('#anime-dyn-msg').html('<h6>Anime deleted successfully! Your Anime list has changed! Click "Get All Anime" again to see your updated list.</h6>')
     $('#anime-delete-msg').addClass('success')
 
     $('#anime-delete-btn').show()
@@ -151,6 +153,8 @@ const onDeleteSuccess = () => {
     
     // reset all forms
     $('form').trigger('reset')
+    
+    $('#anime-display').html('')
 }
 
 
