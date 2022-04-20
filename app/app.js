@@ -51,10 +51,4 @@ $(() => {
 
   $('#anime-display').on('submit', '.dynamic-anime-update', animeEvents.onDynamicUpdateAnime)
   $('#anime-display').on('click', '.dynamic-anime-delete', animeEvents.onDynamicDeleteAnime)
-  
-  // $('#anime-display').on('click', '.dynamic-anime-update-btn', animeEvents.onDynUpBtn)
-  // $('.dynamic-anime-update-btn').show()
-  // // $('.dynamic-anime-update-btn').on('click', animeEvents.onDynUpBtn)
-  // $('.dynamic-anime-update-form').hide()
-
 })

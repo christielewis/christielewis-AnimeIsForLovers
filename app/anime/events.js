@@ -165,8 +165,10 @@ const onDynamicUpdateAnime = (e) => {
     const data = getFormFields(e.target)
     const title = data.anime.title
     const description = data.anime.description
+    const season = data.anime.season
+    const episode = data.anime.episode
     
-    animeApi.updateAnime(id, title, description)
+    animeApi.updateAnime(id, title, description, season, episode)
         .then(animeUi.onUpdateSuccess)
         .catch(animeUi.onError)
 }
