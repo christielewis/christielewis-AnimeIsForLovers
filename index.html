@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>💖Anime is for Lovers💖</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1 id="title">💖Anime is for Lovers💖</h1>
+      <div id="welcome-pg">
+        <h2>For Lovers💖 and lovers of 💖Anime</h2>
+        <h2>New here?</h2>
+        <button id="welcome-sign-up">Sign Up</button>
+        <h2>Returning Lover?</h2>
+        <button id="welcome-sign-in">Sign In</button>
+      </div>
+
+      <div class="hidden" id="sign-up">
+        <h3>Sign Up</h3>
+        <form id="sign-up-form">
+          <input type="email" name="credentials[email]" placeholder="Enter valid email">
+          <input type="password" name="credentials[password]" placeholder="Enter password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Re-enter password">
+          <button type="submit">Sign Up</button>
+          <!-- <section id="auth-status-sign-up"></section> -->
+        </form>
+      </div>
+
+      <div class="hidden" id="sign-in">
+        <h3>Sign In</h3>
+        <form id="sign-in-form">
+          <input type="email" name="credentials[email]" placeholder="Enter valid email">
+          <input type="password" name="credentials[password]" placeholder="Enter password">
+          <button type="submit">Sign In</button>
+          <!-- <section id="auth-status-sign-in"></section> -->
+        </form>
+      </div>
+      
+      <div class="hidden" id="change-pw">
+        <h3>Change Password</h3>
+        <form id="change-pw-form">
+          <input type="password" name="passwords[old]" placeholder="Enter old password">
+          <input type="password" name="passwords[new]" placeholder="Enter new password">
+          <button type="submit">Change</button>
+        </form>
+        <section id="auth-status-change-pw"></section>
+      </div>
+      
+      <div class="hidden" id="sign-out">
+        <button id="change-pw-btn">Change Password</button>
+        <button id="sign-out-btn">Sign Out</button>
+        <!-- <section id="auth-status-sign-out"></section> -->
+      </div>
+<!-- ///////////// Anime Portion //////////////// -->
+
+      <div class="hidden" id="home-pg">
+          <button id="home-btn">Home</button>
+          <button id="anime-idx">Get All Anime</button>
+          <button id="anime-add-btn">Add Anime</button>
+          <button id="anime-show-btn">Show One Anime</button>
+          <button id="anime-update-btn">Update An Anime</button>
+          <button id="anime-delete-btn">Delete An Anime</button>
+      </div>
+
+      <div class="hidden" id="create-anime">
+        <h2>Add 💖Anime</h2>
+          <form id="anime-create">
+            <input type="text" name="anime[title]" placeholder="Anime Title Here" required>
+            <input type="text" name="anime[description]" placeholder="Enter a brief description" required>
+            <input type="number" name="anime[season]" placeholder="Season" required>
+            <input type="number" name="anime[episode]" placeholder="Episode" required>
+            <button type="submit">Create Anime</button>
+          </form>
+          <div id="anime-create-msg"></div>
+      </div>
+
+      <!-- <div class="hidden" id="idx-anime">
+        <h2>Show All Your Favorite Anime</h2>
+        <button id="anime-idx">Get All Anime</button>
+      </div> -->
+
+      <div class="hidden" id="show-anime">
+        <h2>Show One Anime</h2>
+        <form id="anime-show">
+          <input type='text' name="anime[id]" placeholder="Anime ID Here" required>
+          <button type="submit">Get Anime</button>
+        </form>
+      </div>
+
+      <div class="hidden" id="update-anime">
+        <h2>Update 💖Anime</h2>
+        <form id="anime-update">
+          <input type="text" name="anime[id]" id="anime-id-update" placeholder="Anime ID Here" required>
+          <input type="text" name="anime[title]" placeholder="Anime Title Here" required>
+          <input type="text" name="anime[description]" placeholder="Enter a brief description" required>
+          <input type="number" name="anime[season]" placeholder="Season" required>
+          <input type="number" name="anime[episode]" placeholder="Episode" required>
+          <button type="submit">Update Anime</button>
+        </form>
+        <div id="anime-update-msg"></div>
+      </div>
+      
+      <div class="hidden" id="delete-anime">
+        <h2>Delete An Anime</h2>
+        <form id="anime-delete">
+          <input type="text" name="anime[id]" placeholder="Anime ID Here" required>
+          <button type="submit">Delete Anime</button>
+        </form>
+        <div id="anime-delete-msg"></div>
+      </div>
+
+      <section id="msgs">
+        <div id="auth-status"></div>
+        <div id="err-msg"></div>
+        <div id="anime-display"></div>
+        <div id="anime-dyn-msg"></div>
+      </section>
+      
+    </body>
+</html>
+
